@@ -1,0 +1,351 @@
+/*
+
+https://www.djangoproject.com/community/logos/
+
+*/
+
+/* General formatting */
+
+body {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 10pt;
+  color: #646464;
+}
+
+td {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 10pt;
+  color: #646464;
+}
+
+.smaller {
+  font-size: 7pt;
+}
+
+input {
+  font-family: monospace;
+  font-size: 10pt;
+}
+
+input[type=\"submit\"] {
+  font-family: Verdana, Geneva, sans-serif;
+}
+
+textarea {
+  font-family: monospace;
+  font-size: 10pt;
+}
+
+.clearfix {
+  overflow: hidden;
+  clear: both
+}
+
+p.small {
+  margin: 5px 0;
+}
+
+ul.horizontal-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.horizontal-list li {
+  display: inline-block;
+}
+
+button {
+  padding: 0.25em;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.green {
+  color: green;
+}
+
+/* Nav bar */
+nav#top-bar {
+  /* background-color: #092E20; */
+  /* background-color: #2B8C67; */
+  background-color: #0c4b33;
+}
+
+
+main {
+  background-color: #f8f8f8;
+}
+
+nav#top-bar * {
+  color: #ffffff;
+}
+
+/* Footer */
+nav#footer-bar {
+  background-color: #f8f8f8;
+  /* color: #2B8C67; */
+}
+
+.site-content {
+  margin: 3%;
+}
+
+.site-content-dense {
+  margin: 1%;
+}
+
+td {
+  padding-right: 8px;
+  vertical-align: text-top;
+}
+
+#top-bar td {
+  vertical-align: middle;
+}
+
+tr.spacer {
+  height: 1em;
+}
+
+.highlight {
+  background-color: #FFE873;
+}
+
+.self-item {
+  color: #092E20;
+}
+
+.title>a {
+  text-decoration: none;
+}
+
+.title>a:visited {
+  color: #999;
+}
+
+/* td {border:1px solid red;} */
+
+/* Site layout */
+
+nav#top-bar *.active {
+  color: #bfa46a;
+  font-weight: bold;
+}
+
+#pnmain {
+  width: 85%;
+  margin: auto;
+}
+
+nav#pre-footer-bar>hr {
+  border-top: 2px solid #0c4b33;
+  width: 100%;
+}
+
+
+
+/* Item Layout */
+
+
+
+/* Forms */
+
+form.logout-form {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+.logout-button {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  text-decoration: none;
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 10pt;
+  cursor: pointer;
+}
+
+form.comment-form {
+  padding: 20px;
+}
+
+form.comment-form textarea {
+  width: 50%;
+  resize: vertical;
+}
+
+form.comment-form button {
+  float: left;
+  margin-right: 10px;
+}
+
+form.comment-form ul {
+  float: left;
+}
+
+.vote-form {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.vote-button {
+  background: transparent;
+  display: block;
+  padding: 0;
+  padding-top: 4px;
+  /* border: 1px solid red; */
+  border: 0;
+}
+
+/* http://apps.eky.hk/css-triangle-generator/ */
+div.arrow-up {
+  position: relative;
+  top: -2px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0.3em 0.7em 0.3em;
+  border-color: transparent transparent #646464 transparent;
+}
+
+div.arrow-down {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0.7em 0.3em 0 0.3em;
+  border-color: #646464 transparent transparent transparent;
+}
+
+
+.controls {
+  line-height: 6pt;
+  vertical-align: text-top;
+}
+
+.formatting-help {
+  border: 2px solid #ddd;
+  padding: 0.25em;
+  margin: 0 20px;
+  box-sizing: border-box;
+}
+
+.formatting-help.closed {
+  display: none;
+}
+
+.formatting-help h3 {
+  display: block;
+  margin: 0;
+  padding: 0.5em 0 0.25em 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.formatting-help h3:first-child {
+  padding-top: 0;
+}
+
+
+/* mobile device */
+@media only screen and (min-width : 300px) and (max-width : 750px) {
+  #pnmain {
+    width: 100%;
+    margin: 0;
+  }
+
+  body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    -webkit-text-size-adjust: none;
+  }
+
+  td {
+    height: inherit !important;
+  }
+
+  .title,
+  .comment {
+    font-size: inherit;
+  }
+
+  span.pagetop {
+    display: block;
+    margin: 3px 5px;
+    font-size: 12px;
+  }
+
+  span.pagetop b {
+    display: block;
+    font-size: 15px;
+  }
+
+  span.pagetop.a {
+    /* text-decoration: none !important; */
+    text-decoration: none;
+  }
+
+  .vote-form {
+    padding: 0.2em;
+    transform: scale(1.8);
+  }
+
+  body {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12pt;
+    color: #646464;
+  }
+
+  td {
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 12pt;
+    color: #646464;
+  }
+
+  .smaller {
+    font-size: 10pt;
+  }
+
+  button {
+    background-color: #e3e3e3;
+    border: #646464;
+    color: #535353;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  form.comment-form textarea {
+    width: 100%;
+  }
+
+  div.arrow-up {
+    position: relative;
+    top: -2px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 0.2em 0.6em 0.2em;
+    border-color: transparent transparent #646464 transparent;
+  }
+
+  div.arrow-down {
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0.6em 0.2em 0 0.2em;
+    border-color: #646464 transparent transparent transparent;
+  }
+}
