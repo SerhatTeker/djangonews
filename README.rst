@@ -3,15 +3,12 @@ Django News
 
 A Hacker News clone for Django
 
-.. image:: https://img.shields.io/badge/built%20with-Cookiecutter%20Django-ff69b4.svg
-     :target: https://github.com/pydanny/cookiecutter-django/
-     :alt: Built with Cookiecutter Django
+.. image:: https://img.shields.io/badge/License-AGPL%20v3-blue.svg
+     :target: https://www.gnu.org/licenses/agpl-3.0
+     :alt: License AGPLv3
 .. image:: https://img.shields.io/badge/code%20style-black-000000.svg
      :target: https://github.com/ambv/black
      :alt: Black code style
-
-
-:License: GPLv3
 
 
 Settings
@@ -117,6 +114,3 @@ Docker
 See detailed `cookiecutter-django Docker documentation`_.
 
 .. _`cookiecutter-django Docker documentation`: http://cookiecutter-django.readthedocs.io/en/latest/deployment-with-docker.html
-
-
-
