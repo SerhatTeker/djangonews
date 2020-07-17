@@ -16,6 +16,9 @@ django-model-utils==4.0.0  # https://github.com/jazzband/django-model-utils
 django-allauth==0.42.0  # https://github.com/pennersr/django-allauth
 django-crispy-forms==1.9.1  # https://github.com/django-crispy-forms/django-crispy-forms
 django-redis==4.12.1  # https://github.com/jazzband/django-redis
+# News
 django-mptt==0.10.0
+django-ratelimit==2.0.0
+mistune==0.8.4
 # Django REST Framework
 djangorestframework==3.11.0  # https://github.com/encode/django-rest-framework
