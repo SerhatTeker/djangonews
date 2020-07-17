@@ -6,19 +6,9 @@ from django.urls import reverse
 from mptt.models import MPTTModel
 from mptt.models import TreeForeignKey
 
+from core.utils.models import TimeStampedModel
+
 USER = settings.AUTH_USER_MODEL
-
-
-class TimeStampedModel(models.Model):
-    """
-    An abstract base class model that provides self-updating
-    `created_at` and `changed_at` fields.
-    """
-    created_at = models.DateTimeField(auto_now_add=True)
-    changed_at = models.DateTimeField(auto_now=True)
-
-    class Meta:
-        abstract = True
 
 
 class Item(MPTTModel, TimeStampedModel):
