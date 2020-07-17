@@ -1,4 +1,4 @@
-mmmDjango News
+Django News
 =================
 
 A Hacker News clone for Django
