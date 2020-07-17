@@ -294,3 +294,6 @@ REST_FRAMEWORK = {
 }
 # Your stuff...
 # ------------------------------------------------------------------------------
+PAGING_SIZE = 30
+
+SITE_NAME = "Django News"

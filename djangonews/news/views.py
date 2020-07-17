@@ -1,6 +1,6 @@
 import datetime
 
-from accounts.models import CustomUser
+# from accounts.models import USER
 from django.conf import settings
 from django.contrib.auth.decorators import login_required
 from django.core.cache import cache
@@ -39,6 +39,7 @@ from .models import Comment, Item, Story, Vote
 # suggest changes
 # save
 
+USER = settings.AUTH_USER_MODEL
 
 DEFAULT_GET_RATE = "2/s"
 DEFAULT_VOTES_RATE = "10/m"
@@ -221,11 +222,11 @@ def newest(request):  # Done
     add_q = []
     if "submitted_by" in request.GET.keys():
         try:
-            submitted_by = CustomUser.objects.get_by_natural_key(
+            submitted_by = USER.objects.get_by_natural_key(
                 request.GET["submitted_by"]
             )
             add_filter["user"] = submitted_by
-        except CustomUser.DoesNotExist:
+        except USER.DoesNotExist:
             raise Http404()
     if "upvoted_by" in request.GET.keys():
         try:
@@ -310,11 +311,11 @@ def comments(request):  # TODO
     add_filter = {}
     if "submitted_by" in request.GET.keys():
         try:
-            submitted_by = CustomUser.objects.get_by_natural_key(
+            submitted_by = USER.objects.get_by_natural_key(
                 request.GET["submitted_by"]
             )
             add_filter["user"] = submitted_by
-        except CustomUser.DoesNotExist:
+        except USER.DoesNotExist:
             raise Http404()
     if "upvoted_by" in request.GET.keys():
         try:
