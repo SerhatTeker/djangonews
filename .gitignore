@@ -70,6 +70,9 @@ celerybeat-schedule
 venv/
 ENV/
 
+# Local db
+*.sqlite3
+
 # Rope project settings
 .ropeproject
 
