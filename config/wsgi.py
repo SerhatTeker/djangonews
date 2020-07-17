@@ -1,5 +1,5 @@
 """
-WSGI config for mmmDjango News project.
+WSGI config for Django News project.
 
 This module contains the WSGI application used by Django's development server
 and any production WSGI deployments. It should expose a module-level variable

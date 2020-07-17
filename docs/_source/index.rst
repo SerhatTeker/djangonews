@@ -1,9 +1,9 @@
-.. mmmDjango News documentation master file, created by
+.. Django News documentation master file, created by
    sphinx-quickstart.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to mmmDjango News's documentation!
+Welcome to Django News's documentation!
 ======================================================================
 
 .. toctree::

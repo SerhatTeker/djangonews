@@ -23,7 +23,7 @@ django.setup()
 
 # -- Project information -----------------------------------------------------
 
-project = "mmmDjango News"
+project = "Django News"
 copyright = """2020, Serhat Teker"""
 author = "Serhat Teker"
 
