@@ -1,8 +1,8 @@
 from django.apps import AppConfig
 
 
-class NewsConfig(AppConfig):
-    name = 'news'
+class EmaildigestConfig(AppConfig):
+    name = 'emaildigest'
 
     # def ready(self):
     #     from . import receivers
