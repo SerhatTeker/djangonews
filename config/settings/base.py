@@ -288,6 +288,8 @@ ACCOUNT_ADAPTER = "djangonews.users.adapters.AccountAdapter"
 SOCIALACCOUNT_ADAPTER = "djangonews.users.adapters.SocialAccountAdapter"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+# https://django-allauth.readthedocs.io/en/latest/configuration.html
+ACCOUNT_SESSION_REMEMBER = True
 # django-rest-framework
 # -------------------------------------------------------------------------------
 # django-rest-framework - https://www.django-rest-framework.org/api-guide/settings/
