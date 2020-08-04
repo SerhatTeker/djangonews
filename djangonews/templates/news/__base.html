@@ -64,7 +64,7 @@
                             <a href="{{ url }}" {% if url == request.path %}class="active"{% endif %}>{{user}}</a> ({{user.karma}})
                             | <form method="POST" action="{% url 'account_logout' %}" class="logout-form">{% csrf_token %}&nbsp;<button class="logout-button">logout</button></form>
                             {% else %}
-                            {% url 'accout_login' as url %}
+                            {% url 'account_login' as url %}
                             <a href="{{ url }}" {% if url == request.path %}class="active"{% endif %}>login</a>
                             {% url 'accounts_register' as url %}
                             | <a href="{{ url }}" {% if url == request.path %}class="active"{% endif %}>register</a>
