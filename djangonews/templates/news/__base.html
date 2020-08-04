@@ -66,7 +66,7 @@
                             {% else %}
                             {% url 'account_login' as url %}
                             <a href="{{ url }}" {% if url == request.path %}class="active"{% endif %}>login</a>
-                            {% url 'accounts_register' as url %}
+                            {% url 'account_signup' as url %}
                             | <a href="{{ url }}" {% if url == request.path %}class="active"{% endif %}>register</a>
                             {% endif %}
                         </span></td>
