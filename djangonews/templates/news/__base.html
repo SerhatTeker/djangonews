@@ -60,9 +60,14 @@
                         <td style="text-align:right;padding-right:4px;">
                         <span class="pagetop">
                             {% if user.is_authenticated %}
-                            {% url 'accounts_my_profile' as url %}
-                            <a href="{{ url }}" {% if url == request.path %}class="active"{% endif %}>{{user}}</a> ({{user.karma}})
-                            | <form method="POST" action="{% url 'account_logout' %}" class="logout-form">{% csrf_token %}&nbsp;<button class="logout-button">logout</button></form>
+
+                            {% url 'users:update' as url %}
+
+                            <a href="{{ url }}" {% if url == request.path %}class="active"{% endif %}>{{user}}</a> ({{user.karma}}) |
+                            <form method="POST" action="{% url 'account_logout' %}" class="logout-form">
+                              {% csrf_token %}
+                              &nbsp;<button class="logout-button">logout</button>
+                            </form>
                             {% else %}
                             {% url 'account_login' as url %}
                             <a href="{{ url }}" {% if url == request.path %}class="active"{% endif %}>login</a>
