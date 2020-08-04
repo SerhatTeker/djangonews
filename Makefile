@@ -5,6 +5,8 @@ SHELL := /bin/bash
 .DEFAULT_GOAL := runserver
 
 runserver:
+	python manage.py runserver 8000
+runserver_plus:
 	python manage.py runserver_plus 8020
 allmigrations:
 	python manage.py makemigrations && python manage.py migrate
