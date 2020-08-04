@@ -286,7 +286,8 @@ ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 ACCOUNT_ADAPTER = "djangonews.users.adapters.AccountAdapter"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 SOCIALACCOUNT_ADAPTER = "djangonews.users.adapters.SocialAccountAdapter"
-
+# https://django-allauth.readthedocs.io/en/latest/configuration.html
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 # django-rest-framework
 # -------------------------------------------------------------------------------
 # django-rest-framework - https://www.django-rest-framework.org/api-guide/settings/
