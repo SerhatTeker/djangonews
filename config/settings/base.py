@@ -290,6 +290,9 @@ SOCIALACCOUNT_ADAPTER = "djangonews.users.adapters.SocialAccountAdapter"
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_USERNAME_BLACKLIST = ["admin", "boss", "god", "serhat", "teker", "serhatteker"]
+ACCOUNT_USERNAME_MIN_LENGTH = 2
+
 # django-rest-framework
 # -------------------------------------------------------------------------------
 # django-rest-framework - https://www.django-rest-framework.org/api-guide/settings/
