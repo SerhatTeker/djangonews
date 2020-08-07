@@ -1,5 +1,5 @@
 from django.conf import settings
-from .models import Subscription, EmailDigest
+from .models import Subscription, Letter
 
 def create_and_send_digest(frequency):
     pass
@@ -9,7 +9,7 @@ def create_and_send_digest(frequency):
     subscriptions = Subscription.objects.filter(is_active=True, frequency=frequency)
     for subscription in subscriptions:
         tpl = 'TODO: Here is your list' # TODO
-        subject = settings.SITE_NAME + " " + frequency + " Digest"
+        subject = settings.SITE_NAME + " " + frequency + " Letter"
         send_mail(subscription, tpl, subject)
 
 def send_mail(subscription, template, subject):

@@ -6,7 +6,7 @@ from django.urls import reverse
 from mptt.models import MPTTModel
 from mptt.models import TreeForeignKey
 
-from core.utils.models import TimeStampedModel
+from djangonews.core.utils.models import TimeStampedModel
 
 USER = settings.AUTH_USER_MODEL
 
