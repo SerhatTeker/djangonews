@@ -1,33 +1,54 @@
 {% extends 'account/base.html' %}
 
+{% load account %}
+{% load i18n %}
+
 {% block content %}
 <article class="site-content-dense">
-<form method="POST">{% csrf_token %}
-<table>
-{{form.as_table}}
-</table>
-<button type="submit">update</button>
-</form>
+  <form method="POST">{% csrf_token %}
+    <table>
+    {{form.as_table}}
+    </table>
 
-{% if user.email and not verified %}
-{% comment %}
-<hr />
-<form method="POST" action="{% url 'accounts_resend_verification' %}">{% csrf_token %}
-<button type="submit">Resend verification email</button>
-</form>
-{% endcomment %}
-{% endif %}
+    <button type="submit">update</button>
+  </form>
 
+  <hr />
 
-<hr />
+  <form action="{% url 'account_email' %}"  method="post">
+    {% csrf_token %}
 
-<a href="{% url 'account_change_password' %}">change password</a> <br>
-<a href="{% url 'newest' %}?submitted_by={{user}}">submissions</a> <br>
-<a href="{% url 'comments' %}?submitted_by={{user}}">comments</a> <br>
-{% comment %} <a href="#">hidden</a> <br>
-<a href="#">flagged</a> <br> {% endcomment %}
-<a href="{% url 'newest' %}?upvoted_by={{user}}">upvoted submissions</a> / <a href="{% url 'comments' %}?upvoted_by={{user}}">upvoted comments</a> <br>
-{% comment %} <a href="#">favourite submissions</a> / <a href="#">favourite comments</a> <br> {% endcomment %}
+    {% for emailaddress in user.emailaddress_set.all %}
+        {% if request.user.email == emailaddress.email %}
+          {{emailaddress.email}}
+          {% if not emailaddress.verified %}
+            <span class="unverified">{% trans "is not verified" %}</span>
+          {% else %}
+           <span class="verified">{% trans "verified" %}</span>
+          {% endif %}
+        {% endif %}
+    {% endfor %}
 
+    <div class="form-group">
+          <button class="secondaryAction btn btn-primary" type="submit"
+            name="action_send" >{% trans 'Manage Emails' %}</button>
+    </div>
+  </form>
+
+  {% block messages %}
+    {% if messages %}
+    <br />
+        {% for message in messages %}
+            {{ message }}
+        {% endfor %}
+    {% endif %}
+  {% endblock messages %}
+
+  <hr />
+
+  <a href="{% url 'account_change_password' %}">change password</a> <br>
+  <a href="{% url 'newest' %}?submitted_by={{user}}">submissions</a> <br>
+  <a href="{% url 'comments' %}?submitted_by={{user}}">comments</a> <br>
+  <a href="{% url 'newest' %}?upvoted_by={{user}}">upvoted submissions</a> / <a href="{% url 'comments' %}?upvoted_by={{user}}">upvoted comments</a> <br>
 </article>
 {% endblock content %}
