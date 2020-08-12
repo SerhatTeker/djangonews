@@ -2,7 +2,7 @@
 Base settings to build other settings files upon.
 """
 from pathlib import Path
-
+import os
 import environ
 
 ROOT_DIR = Path(__file__).resolve(strict=True).parent.parent.parent
@@ -71,7 +71,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "djangonews.users.apps.UsersConfig",
     "djangonews.news.apps.NewsConfig",
-    "djangonews.digests.apps.DigestsConfig",
+    # "djangonews.digests.apps.DigestsConfig",
 ]
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -309,3 +309,13 @@ REST_FRAMEWORK = {
 PAGING_SIZE = 30
 
 SITE_NAME = "Django News"
+
+# DATABASES
+# ------------------------------------------------------------------------------
+# https://docs.djangoproject.com/en/dev/ref/settings/#databases
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.sqlite3",
+        "NAME": os.path.join(ROOT_DIR, "db.sqlite3"),
+    }
+}

@@ -3,6 +3,7 @@ With these settings, tests run faster.
 """
 
 from .base import *  # noqa
+from .base import INSTALLED_APPS
 from .base import env
 
 # GENERAL

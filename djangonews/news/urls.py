@@ -3,6 +3,8 @@ from django.urls import path
 from . import views
 from .feeds import FrontPageFeed, NewestFeed
 
+app_name = "news"
+
 urlpatterns = [
     path("", views.index, name="index"),
     path("newest", views.newest, name="newest"),
