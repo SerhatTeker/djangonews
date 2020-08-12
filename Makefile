@@ -19,3 +19,8 @@ createsuperuser:
 # Create a SECRET_KEY for settings
 createsecret:
 	python manage.py shell -c 'from django.core.management import utils; print(utils.get_random_secret_key())'
+
+clean-migrations:##@other clear all migrations!!!
+	@find . -path "./djangonews/*/migrations/*.py" -not -name "__init__.py" -delete
+	@find . -path "./djangonews/*/migrations/*.pyc" -delete
+	@rm db.sqlite3
