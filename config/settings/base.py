@@ -71,7 +71,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "djangonews.users.apps.UsersConfig",
     "djangonews.news.apps.NewsConfig",
-    # "djangonews.digests.apps.DigestsConfig",
+    "djangonews.digests.apps.DigestsConfig",
 ]
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
