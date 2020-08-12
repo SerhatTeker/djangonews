@@ -69,5 +69,4 @@ class AnonymousSubscription(Subscription):
 class UnSubscription(TimeStampedModel):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     subscription = models.ForeignKey(Subscription, on_delete=models.CASCADE)
-    from_digest = models.ForeignKey(Letter, on_delete=models.CASCADE, null=True)
-
+    from_digests = models.ForeignKey(Letter, on_delete=models.CASCADE, null=True)

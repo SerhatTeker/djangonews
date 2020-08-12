@@ -1,4 +1,4 @@
-{% load static %}{% load humanize %}{% load digest_extra %}<!doctype html>
+{% load static %}{% load humanize %}{% load digests_extra %}<!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -85,7 +85,7 @@
         <nav id="pre-footer-bar">
             <hr>
             {% if not prevent_footer_subscription_form %}
-                {% digest_subscription_form user=user %}
+                {% digests_subscription_form user=user %}
             {% endif %}
         </nav>
 
