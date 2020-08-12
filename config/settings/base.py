@@ -37,6 +37,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/dev/ref/settings/#locale-paths
 LOCALE_PATHS = [str(ROOT_DIR / "locale")]
 
+# DATABASES
+# ------------------------------------------------------------------------------
+# https://docs.djangoproject.com/en/dev/ref/settings/#databases
+
+DATABASES = {
+    "default": env.db("DATABASE_URL", default="postgres:///djangonews")
+}
+DATABASES["default"]["ATOMIC_REQUESTS"] = True
+
 # URLS
 # ------------------------------------------------------------------------------
 # https://docs.djangoproject.com/en/dev/ref/settings/#root-urlconf
@@ -71,7 +80,7 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "djangonews.users.apps.UsersConfig",
     "djangonews.news.apps.NewsConfig",
-    # "djangonews.digests.apps.DigestsConfig",
+    "djangonews.digests.apps.DigestsConfig",
 ]
 
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
@@ -309,13 +318,3 @@ REST_FRAMEWORK = {
 PAGING_SIZE = 30
 
 SITE_NAME = "Django News"
-
-# DATABASES
-# ------------------------------------------------------------------------------
-# https://docs.djangoproject.com/en/dev/ref/settings/#databases
-DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": os.path.join(ROOT_DIR, "db.sqlite3"),
-    }
-}
