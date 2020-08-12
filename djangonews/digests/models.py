@@ -1,13 +1,13 @@
 import uuid
 
-from core.utils.models import TimeStampedModel
+from djangonews.core.utils.models import TimeStampedModel
 from django.conf import settings
 from django.db import models
 
 USER = settings.AUTH_USER_MODEL
 
 
-class EmailDigest(TimeStampedModel):
+class Letter(TimeStampedModel):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     frequency = models.CharField(
         max_length=16, choices=(("weekly", "weekly"), ("daily", "daily"))
@@ -69,4 +69,4 @@ class AnonymousSubscription(Subscription):
 class UnSubscription(TimeStampedModel):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     subscription = models.ForeignKey(Subscription, on_delete=models.CASCADE)
-    from_digest = models.ForeignKey(EmailDigest, on_delete=models.CASCADE, null=True)
+    from_digests = models.ForeignKey(Letter, on_delete=models.CASCADE, null=True)

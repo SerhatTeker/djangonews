@@ -71,8 +71,9 @@ THIRD_PARTY_APPS = [
 LOCAL_APPS = [
     "djangonews.users.apps.UsersConfig",
     "djangonews.news.apps.NewsConfig",
-    "djangonews.emaildigest.apps.EmaildigestConfig",
+    "djangonews.digests.apps.DigestsConfig",
 ]
+
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 
@@ -277,7 +278,7 @@ CELERY_BEAT_SCHEDULER = "django_celery_beat.schedulers:DatabaseScheduler"
 # ------------------------------------------------------------------------------
 ACCOUNT_ALLOW_REGISTRATION = env.bool("DJANGO_ACCOUNT_ALLOW_REGISTRATION", True)
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
-ACCOUNT_AUTHENTICATION_METHOD = "username"
+ACCOUNT_AUTHENTICATION_METHOD = "username_email"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 ACCOUNT_EMAIL_REQUIRED = True
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
@@ -286,6 +287,12 @@ ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 ACCOUNT_ADAPTER = "djangonews.users.adapters.AccountAdapter"
 # https://django-allauth.readthedocs.io/en/latest/configuration.html
 SOCIALACCOUNT_ADAPTER = "djangonews.users.adapters.SocialAccountAdapter"
+# https://django-allauth.readthedocs.io/en/latest/configuration.html
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+# https://django-allauth.readthedocs.io/en/latest/configuration.html
+ACCOUNT_SESSION_REMEMBER = True
+ACCOUNT_USERNAME_BLACKLIST = ["admin", "boss", "god", "serhat", "teker", "serhatteker"]
+ACCOUNT_USERNAME_MIN_LENGTH = 2
 
 # django-rest-framework
 # -------------------------------------------------------------------------------

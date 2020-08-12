@@ -1,4 +1,4 @@
-{% load static %}{% load humanize %}{% load emaildigest_extra %}<!doctype html>
+{% load static %}{% load humanize %}{% load digests_extra %}<!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -60,13 +60,18 @@
                         <td style="text-align:right;padding-right:4px;">
                         <span class="pagetop">
                             {% if user.is_authenticated %}
-                            {% url 'accounts_my_profile' as url %}
-                            <a href="{{ url }}" {% if url == request.path %}class="active"{% endif %}>{{user}}</a> ({{user.karma}})
-                            | <form method="POST" action="{% url 'account_logout' %}" class="logout-form">{% csrf_token %}&nbsp;<button class="logout-button">logout</button></form>
+
+                            {% url 'users:update' as url %}
+
+                            <a href="{{ url }}" {% if url == request.path %}class="active"{% endif %}>{{user}}</a> ({{user.karma}}) |
+                            <form method="POST" action="{% url 'account_logout' %}" class="logout-form">
+                              {% csrf_token %}
+                              &nbsp;<button class="logout-button">logout</button>
+                            </form>
                             {% else %}
-                            {% url 'accout_login' as url %}
+                            {% url 'account_login' as url %}
                             <a href="{{ url }}" {% if url == request.path %}class="active"{% endif %}>login</a>
-                            {% url 'accounts_register' as url %}
+                            {% url 'account_signup' as url %}
                             | <a href="{{ url }}" {% if url == request.path %}class="active"{% endif %}>register</a>
                             {% endif %}
                         </span></td>
@@ -80,7 +85,7 @@
         <nav id="pre-footer-bar">
             <hr>
             {% if not prevent_footer_subscription_form %}
-                {% digest_subscription_form user=user %}
+                {% digests_subscription_form user=user %}
             {% endif %}
         </nav>
 
