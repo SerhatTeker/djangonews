@@ -20,7 +20,13 @@ createsuperuser:
 createsecret:
 	python manage.py shell -c 'from django.core.management import utils; print(utils.get_random_secret_key())'
 
+clean-djangonews: clean-pycache clean-migrations clean-mypycache
 clean-migrations:##@other clear all migrations!!!
-	@find . -path "./djangonews/*/migrations/*.py" -not -name "__init__.py" -delete
-	@find . -path "./djangonews/*/migrations/*.pyc" -delete
+	@find . -path "./djangonews/news/migrations/*.py" -not -name "__init__.py" -delete
+	@find . -path "./djangonews/digests/migrations/*.py" -not -name "__init__.py" -delete
+	@find . -path "./djangonews/users/migrations/*.py" -not -name "__init__.py" -not -name "0001_initial.py" -delete
 	@rm db.sqlite3
+clean-pycache:
+	@find . -type d -name  "__pycache__" -exec rm -r {} +
+clean-mypycache:
+	@rm -rf .mypy_cache
