@@ -2,7 +2,7 @@ from django.apps import AppConfig
 
 
 class NewsConfig(AppConfig):
-    name = 'djangonews.news'
+    name = "djangonews.news"
 
     # def ready(self):
     #     try:

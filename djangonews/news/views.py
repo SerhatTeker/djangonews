@@ -222,9 +222,7 @@ def newest(request):  # Done
     add_q = []
     if "submitted_by" in request.GET.keys():
         try:
-            submitted_by = USER.objects.get_by_natural_key(
-                request.GET["submitted_by"]
-            )
+            submitted_by = USER.objects.get_by_natural_key(request.GET["submitted_by"])
             add_filter["user"] = submitted_by
         except USER.DoesNotExist:
             raise Http404()
@@ -311,9 +309,7 @@ def comments(request):  # TODO
     add_filter = {}
     if "submitted_by" in request.GET.keys():
         try:
-            submitted_by = USER.objects.get_by_natural_key(
-                request.GET["submitted_by"]
-            )
+            submitted_by = USER.objects.get_by_natural_key(request.GET["submitted_by"])
             add_filter["user"] = submitted_by
         except USER.DoesNotExist:
             raise Http404()
