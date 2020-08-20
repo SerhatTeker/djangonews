@@ -36,14 +36,14 @@
             <table border="0" cellpadding="0" cellspacing="0" width="100%" style="padding:2px">
                 <tbody>
                     <tr>
-                        <td style="width:18px;padding-right:4px"><a href={% url 'index' %}><img alt="Django Icon"
+                        <td style="width:18px;padding-right:4px"><a href={% url 'news:index' %}><img alt="Django Icon"
                         src="https://static.djangoproject.com/img/icon-touch.e4872c4da341.png"
                         width="18" height="18"></a></td>
                         <td style="line-height:12pt; height:10px;">
                             <span class="pagetop">
                             <b class="pnname">
 
-                            <a href="{% url 'index' %}">{{SITE_NAME}}</a></b>
+                            <a href="{% url 'news:index' %}">{{SITE_NAME}}</a></b>
                             {% url 'newest' as url %}
                             <a href="{{ url }}" {% if url == request.path %}class="active"{% endif %}>new</a>
                             | {% url 'threads' as url %}
