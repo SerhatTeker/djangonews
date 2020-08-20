@@ -10,6 +10,8 @@ A Hacker News clone for Django
      :target: https://github.com/ambv/black
      :alt: Black code style
 
+.. image:: ./docs/img/main.png
+     :alt: Django News Project
 
 Settings
 --------
