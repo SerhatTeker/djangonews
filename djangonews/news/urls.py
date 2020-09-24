@@ -6,7 +6,7 @@ from .feeds import FrontPageFeed, NewestFeed
 # app_name = "news"
 
 urlpatterns = [
-    path("", views.index, name="index"),
+    path("", views.newest, name="index"),
     path("newest", views.newest, name="newest"),
     path("threads", views.threads, name="threads"),
     path("comments", views.comments, name="comments"),
