@@ -10,7 +10,7 @@ A Hacker News clone for Django
      :target: https://github.com/ambv/black
      :alt: Black code style
 
-**Demo**: https://djangonews-383.herokuapp.com/newest
+**Demo**: https://djangonews-383.herokuapp.com/
 
 .. image:: ./docs/img/main.png
      :alt: Django News Project
