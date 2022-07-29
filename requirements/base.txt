@@ -23,6 +23,6 @@ django-redis==4.12.1  # https://github.com/jazzband/django-redis
 # News
 django-mptt==0.10.0
 django-ratelimit==2.0.0
-mistune==0.8.4
+mistune==2.0.3
 # Django REST Framework
 djangorestframework==3.11.0  # https://github.com/encode/django-rest-framework
